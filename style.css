@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800;900&display=swap');
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    scroll-behavior: smooth;
+  }
+  
+  html {
+      --scrollbarBG: black;
+      --thumbBG: red;
+    }
+    body::-webkit-scrollbar {
+      width: 10px;
+    }
+  
+    body::-webkit-scrollbar-track {
+      background: var(--scrollbarBG);
+    }
+    body::-webkit-scrollbar-thumb {
+      background-color: var(--thumbBG) ;
+      border-radius: 6px;
+      border: 3px solid var(--scrollbarBG);
+    }
+  
+  
+  
+.shape {
+    width: 0;
+    height: 0;
+    border-top: 15px solid red;
+    border-right: 15px solid transparent;
+    margin-bottom: 5px;
+    margin-right: 5px;
+   }
+
+   .shape-white {
+    width: 0;
+    height: 0;
+    border-top: 15px solid white;
+    border-right: 15px solid transparent;
+    margin-bottom: 5px;
+    margin-right: 5px;
+   }
+   
+   .shape-circle {
+    width: 10px;
+    height: 10px;
+  border-radius: 50%;
+  background: red;
+  margin-right: 5px;
+   }
+
+   nav{
+    background: white;
+    display: flex;
+    justify-content: space-between;
+   
+    align-items: center;
+   }
+
+   nav .logo{
+    font-size: 25px;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+   }
+
+   nav ul{
+display: flex;
+list-style: none;
+padding: 0px;
+margin: 0px;
+
+   }
+
+   nav ul li a{
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px 10px;
+    transition: 0.3s;
+  }
+
+   nav ul .active{
+    background: red;
+    color: white;
+}
+   
+   nav ul li a :hover{
+    transform: translateY(-2px);
+   }
+
+ 
+
+
+
+@media(max-width:992px){
+  .lg-nav{
+    display: none;
+  }
+  .mobile-nav-toggle{
+    display: block;
+  }
+  .mobile-nav {
+    position: fixed;
+    --gap:2rem;
+    border-radius: 0px;
+    inset:0 0 0 40%;
+    z-index: 1000;
+    flex-direction: column;
+    padding: min(20vh, 10rem) 2em;
+    transform: translateX(100%);
+    transition: 0.3s;
+  
+    list-style: none;
+  margin: 0;
+  
+   background: white;
+  backdrop-filter: blur(2rem);
+  
+    }
+    .mobile-nav li {
+      margin-bottom: 10px;
+    }
+    .mobile-nav[data-visible="true"]{
+      transform: translateX(0%);
+    
+     }
+
+     .mobile-nav-toggle{
+      display: block;
+      position: absolute;
+      z-index: 9999;
+      background: transparent;
+      background-image: url('./Assets/menu.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 2rem;
+      height: 2rem;
+      border: 0;
+      top: 2.3rem;
+      right: 2rem;
+      transition: 0.4s;
+    }
+    .mobile-nav-toggle[aria-expanded="true"]{
+      background-image: url('./Assets/close.svg');
+      position: fixed;
+   
+    }
+    @media(max-width:600px){
+      .mobile-nav-toggle{
+        top: 3.4rem;
+      }
+    }
+ 
+}
+@media(min-width:992px){
+  .lg-nav{
+    display: flex;
+  }
+  .mobile-nav{
+    display: none;
+  }
+  .mobile-nav-toggle{
+    display: none;
+  }
+ 
+}
+
+
+.mini-header{
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    padding: 0px 10px;
+}
+.mini-header p{
+    font-size: 12px;
+    margin: 8px 0px;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/hero-bg.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-text {
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    
+  }
+  
+  .hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    background-color: red;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  
+  .hero-text button:hover {
+    background-color: white;
+    color: red;
+  }
+  .hero-image .nav-item .nav-link{
+    color: black;
+  }
+ 
+  .hero-image .hero-footer{
+    position: absolute;
+    bottom: -10%;
+    height: max-content;
+    }
+  .hero-image .hero-footer p{
+    margin-bottom: 0px;
+  }
+  .hero-image .hero-footer .hero-card-left{
+    background: blue;
+    color: white;
+  }
+  .hero-image .hero-footer .hero-card-right{
+    background: darkblue;
+    color: white;
+   
+  }
+
+  .usp{
+    margin-top: 100px;
+}
+
+@media(max-width:992px){
+    .usp{
+        margin-top: 50px;
+    }
+    
+}
+.usp hr{
+    width: 40%;
+    color: red;
+    height: 2px;
+    opacity: 1;
+    margin: 5px 0px;
+}
+.usp i{
+    color: red;
+}
+.features{
+    background: rgb(227, 237, 240);
+    background-size: cover;
+    padding: 20px 0px;
+
+}
+.features hr{
+    background-color: red;
+    opacity: 1;
+    height: 2px;
+    width: 50%;
+    margin: 5px 0px;
+}
+.features .feature-title{
+    font-weight: 600;
+}
+
+.features .feature-icon{
+    color: red;
+
+}
+
+.features .btn-vpc{
+    background: red;
+    color: white;
+    border-radius: 8px;
+}
+.features .btn-play{
+    background: black;
+    color: white;
+    border-radius: 8px;
+}
+
+.features-2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/hero-bg.jpg");
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 40px 0px;
+ 
+
+}
+.features-2-content{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-20%, -20%);
+   
+    
+
+}
+.features-2 .feature-2-title{
+    width: max-content;
+    margin: auto;
+}
+.features-2 .feature-2-title hr{
+    background: white;
+    height: 2px;
+    opacity: 1;
+    margin: 10px 0px 20px 0px;
+}
+.features-2 .card{
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 0px;
+}
+.features-2 .card hr{
+    background: black;
+    height: 2px;
+    opacity: 1;
+    width: 50%;
+    margin: 10px auto;
+}
+
+.features-2 .card i{
+    color: red;
+    font-size: 25px;
+    
+}
+  
+
+.logo-footer{
+    margin-top: 200px;
+    padding: 30px 0px;
+    background: rgb(222, 233, 236);
+    background-size: cover;
+    
+}
+@media (max-width:992px) {
+    .logo-footer{
+        margin-top: 250px;
+    }
+}
+
+footer{
+    background: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
